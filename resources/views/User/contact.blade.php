@@ -1,7 +1,7 @@
 <x-layout>
     <div class="max-w-5xl mx-auto py-12 px-4">
       <div class="text-center py-16">
-        <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-7 tracking-wide">Contact</h1>
+        <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-7 tracking-wide">CONTACT</h1>
         <div class="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
       </div>
         <h2 class="text-4xl italic text-center mb-8">TRISNA COLLECTION</h2>
