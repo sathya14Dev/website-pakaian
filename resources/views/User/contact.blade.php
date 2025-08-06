@@ -1,11 +1,11 @@
 <x-layout>
-    <div class="max-w-5xl mx-auto py-12 px-4">
+    <div class="max-w-5xl mx-auto py-2 px-4">
       <div class="text-center py-16">
-        <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-7 tracking-wide">Contact</h1>
+        <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-7 tracking-wide">CONTACT</h1>
         <div class="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
       </div>
         <h2 class="text-4xl italic text-center mb-8">TRISNA COLLECTION</h2>
-        <p class="text-2xl text-center text-gray-600 mb-8">Pertanyaan, kerjasama, atau pemesanan khusus? Tim kami siap membantu. Jangan ragu untuk menghubungi kami!</p>
+        <p class="text-sm md:text-xl sm:text-2xl text-center text-gray-600 mb-8">Pertanyaan, kerjasama, atau pemesanan khusus? Tim kami siap membantu. Jangan ragu untuk menghubungi kami!</p>
         <!-- form Pelanggan -->
         <form action="#" method="POST" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
