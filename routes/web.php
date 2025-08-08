@@ -18,8 +18,8 @@ Route::get('/products', function () {
     return view('User.products');
 }); 
 
-Route::get('/home', function () {
-    return view('User.home');
+Route::get('/detail', function () {
+    return view('User.product-detail');
 });
 
 Route::get('/contact', function () {
