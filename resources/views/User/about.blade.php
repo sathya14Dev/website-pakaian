@@ -1,12 +1,11 @@
 <x-layout>
   <!-- Judul Utama -->
-  <div class="text-center py-16 bg-gradient-to-b from-slate-50 to-white">
+  <div class="text-center py-18 bg-gradient-to-b from-slate-50 to-white">
     <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-4 tracking-wide">ABOUT US</h1>
     <div class="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
   </div>
 
-  <!-- Container dengan background subtle -->
-  <div class="bg-white">
+  <div>
     <!-- Kontainer Pertama (Gambar di Kiri, Teks di Kanan) -->
     <div class="max-w-7xl mx-auto py-20">
       <div class="grid lg:grid-cols-2 gap-16 items-center px-6 lg:px-12">
@@ -50,7 +49,7 @@
 
     <!-- Kontainer Kedua (Teks di Kiri, Gambar di Kanan) -->
     <div class="bg-gradient-to-br from-slate-50 to-blue-50/30">
-      <div class="max-w-7xl mx-auto py-20">
+      <div class="max-w-7xl mx-auto pt-20">
         <div class="grid lg:grid-cols-2 gap-16 items-center px-6 lg:px-12">
           <div class="space-y-8">
             <div>
@@ -143,23 +142,17 @@
               </div>
             </div>
             
-            <!-- CTA Button -->
-            <div class="pt-6">
-              <button class="group bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-                <span class="flex items-center space-x-3">
-                  <span class="font-semibold text-lg">KUNJUNGI TOKO</span>
-                  <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                  </svg>
-                </span>
-              </button>
+            <div class="pt-6 group">
+              <a href="{{ url('products') }}" class="inline-flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white w-full px-8 py-4 md:w-auto md:px-8 md:py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                <span class="font-semibold text-lg mr-3">KUNJUNGI TOKO</span>
+                <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="white" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+                </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Bottom spacing -->
-  <div class="h-16 bg-gradient-to-t from-slate-50 to-white"></div>
 </x-layout>

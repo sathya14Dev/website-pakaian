@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 <body class="bg-gray-100">
     <x-navbar></x-navbar>
     
-    <main class="pt-32 px-10">
+    <main class="pt-16">
         {{ $slot }}
     </main>
 

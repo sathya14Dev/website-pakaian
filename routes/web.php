@@ -18,10 +18,6 @@ Route::get('/products', function () {
     return view('User.products');
 }); 
 
-Route::get('/detail', function () {
-    return view('User.product-detail');
-});
-
 Route::get('/contact', function () {
     return view('User.contact');
 }); 

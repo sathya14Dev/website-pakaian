@@ -1,68 +1,91 @@
 <x-layout>
     <div class="flex flex-col">
-        <section class="relative h-[500px] flex items-center justify-center text-white text-center overflow-hidden">
+        <section
+            class="relative h-screen flex items-center justify-center text-white text-center overflow-hidden rounded-bl-2xl rounded-br-2xl">
 
             <!-- Gambar latar belakang -->
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-sm brightness-75"
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat blur-xs brightness-75"
                 style="background-image: url('{{ asset('img/bg.jpg') }}');">
             </div>
 
             <!-- Overlay hitam semi-transparan (opsional tambahan) -->
-            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
 
             <!-- Konten -->
-            <div class="relative z-10">
-                <h1 class="text-5xl font-bold mb-4 ">Fashion Simpel, Look Maksimal!</h1>
-                <p class="mb-6 max-w-xl mx-auto">
+            <div class="relative z-10 px-6 md:px-10">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 ">Fashion Simpel, Look Maksimal!</h1>
+                <p class="mb-8 font-light max-w-xl mx-auto">
                     Koleksi baju kekinian untuk kamu yang aktif, berani, dan stylish. Update gaya tanpa mengorbankan
                     kenyamanan.
                 </p>
-                <a href="/products"
-                    class="bg-white text-black font-semibold px-6 py-2 rounded hover:bg-gray-200 transition">
-                    Explore Now
+                <a href="#explore" class="text-white group border border-white font-semibold px-10 py-3 rounded-xl">
+                    Explore Now <i
+                        class="fa-solid fa-arrow-down text-xs transform transition-transform duration-300 group-hover:translate-y-1"></i>
                 </a>
             </div>
 
         </section>
 
-        <div class="flef flex-col place-items-center mt-6">
-            <h4 class="text-2xl font-medium p-4 uppercase">Fashion Simple, Look Maximal!</h4>
-            <p class="w-125 justify-self-center text-center pb-7">Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Suscipit, at architecto veritatis iste omnis
-                minus placeat. Culpa harum quae iure.</p>
-        </div>
-        <div class="grid gap-9 grid-cols-3 place-items-center pt-7">
-            <!-- Baris 1 -->
-            <div class="bg-gray-300"><img src="{{ asset('img/image.png') }}" alt=""></div>
-            <div class="bg-gray-300"><img src="{{ asset('img/image1.png') }}" alt=""></div>
-            <div class="bg-gray-300"><img src="{{ asset('img/image2.png') }}" alt=""></div>
+        <section class="px-6 md:px-10 mt-32 scroll-mt-26" id="explore">
+            <div class="flex flex-col justify-center items-center">
+                <h4 class="text-xl sm:text-2xl md:text-3xl font-medium">Fashion Simple, Look Maximal!</h4>
+                <p class="w-full md:w-2xl text-center mt-5 font-light">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Suscipit, at architecto veritatis iste omnis
+                    minus placeat. Culpa harum quae iure.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+                <!-- Baris 1 -->
+                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image.png') }}" alt="kamen"
+                        class="w-44"></div>
+                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image1.png') }}" alt="kamen"
+                        class="w-44"></div>
+                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image2.png') }}" alt="kamen"
+                        class="w-44"></div>
 
-            <!-- Baris 2 -->
-            <div class="bg-gray-300"><img src="{{ asset('img/image3.png') }}" alt=""></div>
-            <div class="bg-gray-300"><img src="{{ asset('img/image4.png') }}" alt=""></div>
-            <div class="bg-gray-300"><img src="{{ asset('img/image5.png') }}" alt=""></div>
+                <!-- Baris 2 -->
+                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image3.png') }}" alt="kamen"
+                        class="w-44"></div>
+                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image4.png') }}" alt="kamen"
+                        class="w-44"></div>
+                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image5.png') }}" alt="kamen"
+                        class="w-44"></div>
 
+            </div>
             <!-- Tombol di baris 3, berada di tengah -->
-            <div class="col-span-3 flex justify-center">
-                <a href="/detail" class="bg-black text-white p-2 px-4 rounded hover:bg-sky-950 transition">
-                    More Products
+            <div class="flex justify-center mt-5">
+                <a href="/products" class="bg-gray-800 group text-white py-2 px-4 rounded hover:bg-gray-950 transition">
+                    More Products<i
+                        class="fa-solid fa-arrow-right text-xs ml-1 transform transition-transform duration-300 group-hover:translate-x-1"></i>
                 </a>
             </div>
-        </div>
-        <div class="flex flex-row items-center justify-center gap-5 min-h-screen w-full px-3">
-            <img src="{{ asset('img/homebot.jpg') }}" alt="asset1" class="w-[450px] h-auto rounded-2xl">
+        </section>
 
-            <span class="flex flex-col justify-center text-left max-w-xl">
-                <h1 class="text-2xl font-semibold mb-4">Find Your perfect look at Trisna Collection</h1>
-                <p class="text-md">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-32 px-6 md:px-10">
+            <div class="w-full md:w-1/2 flex justify-center">
+                <img src="{{ asset('img/homebot.jpg') }}" alt="asset1"
+                    class="rounded-2xl max-h-96 w-full max-w-xl object-cover">
+            </div>
+
+            <div class="w-full md:w-1/2 flex flex-col justify-center">
+                <h1 class="text-2xl text-center md:text-left md:text-3xl font-semibold">Find Your perfect look at Trisna Collection</h1>
+                <p class="mt-10 text-base md:text-lg">
                     Temukan koleksi busana adat khas Bali terbaik di Trisna Collection. Mulai dari berbagai motif
                     tradisional
                     yang sarat makna budaya hingga sentuhan modern yang elegan. Tersedia beragam pilihan seperti Udeng,
                     Kemeja, Selendang, hingga Kamen, cocok untuk upacara adat maupun acara formal.
                 </p>
-            </span>
+            </div>
         </div>
 
+    </div>
+
+    <div class="flex flex-col justify-center items-center mt-32 px-10">
+        <h2 class="text-4xl italic text-center mb-8">TRISNA COLLECTION</h2>
+        <p class="text-sm md:text-lg sm:text-xl text-center w-full md:w-2xl text-gray-600 mb-8">Pertanyaan, kerjasama, atau
+            pemesanan khusus? Tim kami siap membantu. Jangan ragu untuk menghubungi kami!</p>
+        <a href="{{ url('contact') }}"
+            class="bg-[#4b1e1e] hover:bg-[#3a1616] text-white font-semibold py-2 px-6 rounded-md">Contact</a>
+    </div>
 
     </div>
 </x-layout>
