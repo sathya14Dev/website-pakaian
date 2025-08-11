@@ -7,10 +7,15 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
+// Otomatis ke Home
 Route::get('/', function () {
     return view('User.home');
-}); 
+});
 
+// Otomatis ke Login Admin
+Route::get('/admin', function () {
+    return redirect()->route('admin.login');
+});
 
 // User Routes
 Route::middleware(['guest'])->group(function () {
@@ -23,16 +28,16 @@ Route::middleware(['guest'])->group(function () {
 
 // Authentication Routes
 Route::middleware(['guest'])->group(function () {
-    Route::get('/login', [AdminAuthController::class, 'loginForm'])->name('login');
-    Route::post('/login', [AdminAuthController::class, 'login'])->name('login.submit');
+    Route::get('/admin/login', [AdminAuthController::class, 'loginForm'])->name('admin.login');
+    Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('login.submit');
 });
 
-Route::middleware(['auth:admin'])->group(function () {
-    Route::get('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+Route::middleware(['auth.custom:admin'])->group(function () {
+    Route::get('/admin/logout', [AdminAuthController::class, 'logout'])->name('logout');
 });
 
 // Admin Routes
-Route::prefix('admin')->name('admin.')->middleware(['auth:admin'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth.custom:admin'])->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::resource('category', CategoryController::class);
     Route::resource('product', ProductController::class);
