@@ -14,7 +14,30 @@
     /* --font-poppins: "Poppins", "sans-serif"; */
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .link-navbar {
     @apply text-gray-700 hover:text-gray-900;
 }
 
+.hide {
+    @apply -translate-x-full;
+}
+
+.full {
+    @apply w-full !ml-0;
+}
+
+
+.dd-closed {
+    @apply hidden;
+}
+
+
+aside,
+main,
+nav {
+    @apply duration-700 ease-in-out;
+}
