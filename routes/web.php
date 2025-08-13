@@ -42,3 +42,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth.custom:admin'])->group
     Route::resource('category', CategoryController::class);
     Route::resource('product', ProductController::class);
 });
+
+// show
+Route::get('/show_category', function () {
+    return view('Admin.Categories.show');
+});
