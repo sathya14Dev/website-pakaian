@@ -24,10 +24,11 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/products', [UserController::class, 'products']);
     Route::get('/product-detail', [UserController::class, 'productDetail']);
     Route::get('/contact', [UserController::class, 'contact']);
+    Route::post('/contact', [UserController::class, 'send'])->name('contact.send');
 });
 
 // Authentication Routes
-Route::middleware(['guest'])->group(function () {
+Route::middleware(['guest:admin'])->group(function () {
     Route::get('/admin/login', [AdminAuthController::class, 'loginForm'])->name('admin.login');
     Route::post('/admin/login', [AdminAuthController::class, 'login'])->name('login.submit');
 });

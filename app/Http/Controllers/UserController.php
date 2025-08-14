@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -29,5 +31,21 @@ class UserController extends Controller
     function contact()
     {
         return view('User.contact');
+    }
+
+    public function send(Request $request)
+    {
+        $request->validate([
+            'name'    => 'required|string|max:255',
+            'email'   => 'required|email',
+            'message' => 'required|string'
+        ]);
+
+        // Kirim email ke kamu
+        $data = $request->only('name', 'email', 'message');
+
+        Mail::to('trisnacollection@example.com')->send(mailable: new ContactMail($data));
+
+        return back()->with('success', 'Pesan kamu sudah terkirim!');
     }
 }

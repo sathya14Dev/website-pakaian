@@ -6,8 +6,17 @@
       </div>
         <h2 class="text-4xl italic text-center mb-8">TRISNA COLLECTION</h2>
         <p class="text-sm md:text-xl sm:text-2xl text-center text-gray-600 mb-8">Pertanyaan, kerjasama, atau pemesanan khusus? Tim kami siap membantu. Jangan ragu untuk menghubungi kami!</p>
+
+        @if (Session('success'))
+            <div class="w-full mt-4 mb=2 border border-green-200 rounded-md">
+                <p class="p-3 bg-green-100 text-green-800 font-medium"><i
+                        class="fa-solid fa-circle-check mr-3"></i>{{ Session('success') }}
+                </p>
+            </div>
+        @endif
         <!-- form Pelanggan -->
-        <form action="#" method="POST" class="space-y-6">
+        <form action="{{ route('contact.send') }}" method="POST" class="space-y-6">
+            @csrf
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                     type="text"
@@ -75,7 +84,7 @@
                     <h3 class="font-bold text-base flex items-center gap-2">
                         <i class="fab fa-instagram text-white text-lg"></i>
                         <p class="text-white text-lg">
-                          @warcharming
+                        @warcharming
                         </p>
                     </h3>
                     <p class="text-sm text-white">

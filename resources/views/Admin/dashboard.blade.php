@@ -22,7 +22,7 @@
         </div>
 
         <!-- Tabel Admin -->
-        <div class="w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="w-full max-w-4xl bg-white shadow-lg rounded-lg overflow-x-auto">
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-gray-100 text-gray-700 uppercase text-sm">

@@ -10,7 +10,7 @@
         </div>
 
         <!-- Tabel Category -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="bg-white shadow-lg rounded-lg overflow-x-auto w-full">
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-gray-100 text-gray-700 uppercase text-sm">
