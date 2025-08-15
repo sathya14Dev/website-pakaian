@@ -48,3 +48,30 @@ Route::prefix('admin')->name('admin.')->middleware(['auth.custom:admin'])->group
 Route::get('/show_category', function () {
     return view('Admin.Categories.show');
 });
+
+// edit
+Route::get('/edit_category', function () {
+    return view('Admin.Categories.edit');
+});
+
+// create
+Route::get('/crete_category', function () {
+    return view('Admin.Categories.create');
+});
+
+
+// show product
+
+Route::get('/show_product', function () {
+    return view('Admin.Products.show');
+});
+
+// edit product
+Route::get('/edit_product', function () {
+    return view('Admin.Products.edit');
+});
+
+// create product
+Route::get('/create_product', function () {
+    return view('Admin.Products.create');
+});
