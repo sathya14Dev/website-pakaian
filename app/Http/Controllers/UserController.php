@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Message;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -43,6 +44,8 @@ class UserController extends Controller
 
         // Kirim email ke kamu
         $data = $request->only('name', 'email', 'message');
+
+        Message::create($data);
 
         Mail::to('trisnacollection@example.com')->send(mailable: new ContactMail($data));
 

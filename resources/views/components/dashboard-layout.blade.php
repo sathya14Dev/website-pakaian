@@ -107,8 +107,8 @@
     
     <!-- Top Navigation Bar -->
     <x-nav>
-        <h1 class="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
-        <p class="text-sm text-gray-600">Manage your store efficiently</p>
+        <h1 class="text-lg md:text-2xl font-bold text-gray-800">Admin Dashboard</h1>
+        <p class="text-xs md:text-sm text-gray-600">Manage your store efficiently</p>
     </x-nav>
 
     <!-- Main Content -->

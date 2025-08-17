@@ -8,7 +8,7 @@
         <p class="text-sm md:text-xl sm:text-2xl text-center text-gray-600 mb-8">Pertanyaan, kerjasama, atau pemesanan khusus? Tim kami siap membantu. Jangan ragu untuk menghubungi kami!</p>
 
         @if (Session('success'))
-            <div class="w-full mt-4 mb=2 border border-green-200 rounded-md">
+            <div class="w-full mt-4 mb-2 border border-green-200 rounded-md">
                 <p class="p-3 bg-green-100 text-green-800 font-medium"><i
                         class="fa-solid fa-circle-check mr-3"></i>{{ Session('success') }}
                 </p>

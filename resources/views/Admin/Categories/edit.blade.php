@@ -1,11 +1,27 @@
 <x-dashboard-layout>
     <div class="px-6 py-10">
         <!-- Judul -->
-        <h1 class="text-2xl font-bold mb-6">Category / Edit</h1>
+        <div class="flex gap-1 mb-6">
+            <a href="{{ route('admin.category.index') }}" class="text-gray-500">Category</a>
+            <h1 class="text-gray-800">/</h1>
+            <h1 class="text-gray-800 font-medium">Edit</h1>
+        </div>
 
         <!-- Form Edit -->
         <div class="bg-white shadow-lg rounded-lg p-6">
-            <form action="" method="POST">
+            <form action="{{ route('admin.category.update', $category->id) }}" method="POST">
+                @csrf
+                @method('PUT')
+
+                @if ($errors->any())
+                    <div class="p-3 rounded-md text-red-500 border border-red-500 bg-[#ef44441a] mb-5">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>Error: {{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- ID (Opsional: Bisa disembunyikan atau readonly) -->
                     <div>
@@ -14,7 +30,7 @@
                             type="text" 
                             id="id" 
                             name="id" 
-                            value="1" 
+                            value="{{ $category->id }}" 
                             readonly
                             class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none"
                         >
@@ -25,9 +41,9 @@
                         <label for="category_name" class="block text-gray-700 font-semibold mb-2">Category Name</label>
                         <input 
                             type="text" 
-                            id="category_name" 
-                            name="category_name" 
-                            value="Kebaya Modern" 
+                            id="name" 
+                            name="name" 
+                            value="{{ $category->name }}" 
                             class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
                             placeholder="Enter category name"
                             required
@@ -38,7 +54,7 @@
                 <!-- Tombol -->
                 <div class="flex items-center gap-4 mt-6">
                     <a 
-                        href="" 
+                        href="{{ route('admin.category.index') }}" 
                         class="border border-gray-400 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-100 transition"
                     >
                         Cancel

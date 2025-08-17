@@ -1,11 +1,12 @@
 <?php
 
-use App\Http\Controllers\AdminAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\DashboardController;
 
 // Otomatis ke Home
 Route::get('/', function () {
@@ -39,26 +40,10 @@ Route::middleware(['auth.custom:admin'])->group(function () {
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->middleware(['auth.custom:admin'])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('category', CategoryController::class);
     Route::resource('product', ProductController::class);
 });
-
-// show
-Route::get('/show_category', function () {
-    return view('Admin.Categories.show');
-});
-
-// edit
-Route::get('/edit_category', function () {
-    return view('Admin.Categories.edit');
-});
-
-// create
-Route::get('/crete_category', function () {
-    return view('Admin.Categories.create');
-});
-
 
 // show product
 
