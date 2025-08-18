@@ -34,7 +34,12 @@
                     minus placeat. Culpa harum quae iure.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-                <!-- Baris 1 -->
+                @foreach ($products as $product)
+                    <div class="flex py-4 justify-center shadow-sm">
+                        <a href="/product/{{ $product->category->slug }}/{{ $product->slug }}"><img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-44 h-44 object-cover"></a>
+                    </div>
+                @endforeach
+                {{-- <!-- Baris 1 -->
                 <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image.png') }}" alt="kamen"
                         class="w-44"></div>
                 <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image1.png') }}" alt="kamen"
@@ -48,7 +53,7 @@
                 <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image4.png') }}" alt="kamen"
                         class="w-44"></div>
                 <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image5.png') }}" alt="kamen"
-                        class="w-44"></div>
+                        class="w-44"></div> --}}
 
             </div>
             <!-- Tombol di baris 3, berada di tengah -->

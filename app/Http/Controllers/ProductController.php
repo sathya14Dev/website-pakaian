@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         // Fetch all products and return to the view
-        $products = Product::all();
+        $products = Product::latest()->paginate(5);
         return view('Admin.Products.index', compact('products'));
     }
 
@@ -24,7 +25,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('Admin.Products.create');
+        $categories = Category::all();
+        return view('Admin.Products.create', compact('categories'));
     }
 
     /**
@@ -35,19 +37,25 @@ class ProductController extends Controller
         $request->validate([
             'category_id' => 'required|exists:categories,id',
             'name' => 'required|string|unique:products,name',
-            'harga' => 'required|numeric',
+            'harga' => 'required|string',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        if ($request->file('image')) {
-            $file = $request->file('image');
-            $name = $file->hashName();
+        $imagePath = null;
 
-            Storage::disk('public')->putFileAs('foto_product', $file, $name);
-
-            $request['image'] = $name;
+        if ($request->hasFile('image')) {
+            // Simpan gambar ke storage/app/public/foto_product
+            $imagePath = $request->file('image')->store('foto_product', 'public');
         }
+        // if ($request->file('image')) {
+        //     $file = $request->file('image');
+        //     $name = $file->hashName();
+
+        //     Storage::disk('public')->putFileAs('foto_product', $file, $name);
+
+        //     $request['image'] = $name;
+        // }
 
         Product::create([
             'category_id' => $request->category_id,
@@ -55,10 +63,10 @@ class ProductController extends Controller
             'slug' => Str::slug($request->name),
             'harga' => $request->harga,
             'description' => $request->description,
-            'image' => $name,
+            'image' => $imagePath,
         ]);
 
-        return redirect()->route('Admin.Products.index')->with('success', 'Data berhasil ditambahkan');
+        return redirect()->route('admin.product.index')->with('success', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -74,7 +82,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('Admin.Products.edit', compact('product'));
+        $categories = Category::all();
+        return view('Admin.Products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -85,22 +94,34 @@ class ProductController extends Controller
         $request->validate([
             'category_id' => 'required|exists:categories,id',
             'name' => 'required|string|unique:products,name',
-            'harga' => 'required|numeric',
+            'harga' => 'required|string',
             'description' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
+        $imagePath = $product->image;
+
         if ($request->hasFile('image')) {
-            // Hapus foto lama
-            if ($product->image) {
-                Storage::delete('foto_product/' . $product->image);
+            // Hapus gambar lama kalau ada
+            if ($product->image && Storage::disk('public')->exists($product->image)) {
+                Storage::disk('public')->delete($product->image);
             }
 
-            $file = $request->file('image');
-            $name = $file->hashName();
-            Storage::putFileAs('foto_product', $file, $name);
-            $image = $name; // nama file baru
+            // Simpan gambar baru
+            $imagePath = $request->file('image')->store('foto_product', 'public');
         }
+
+        // if ($request->hasFile('image')) {
+        //     // Hapus foto lama
+        //     if ($product->image) {
+        //         Storage::delete('foto_product/' . $product->image);
+        //     }
+
+        //     $file = $request->file('image');
+        //     $name = $file->hashName();
+        //     Storage::putFileAs('foto_product', $file, $name);
+        //     $image = $name; // nama file baru
+        // }
 
         $product->update([
             'product_id' => $request->product_id,
@@ -108,10 +129,10 @@ class ProductController extends Controller
             'slug' => Str::slug($request->name),
             'harga' => $request->harga,
             'description' => $request->description,
-            'image' => $name,
+            'image' => $imagePath,
         ]);
 
-        return redirect()->route('Admin.Product.index')->with('success', 'Data berhasil diedit!');
+        return redirect()->route('admin.product.index')->with('success', 'Data berhasil diedit!');
     }
 
     /**
@@ -120,6 +141,6 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        return redirect()->route('Admin.Products.index')->with('success', 'Data berhasil dihapus');
+        return redirect()->route('admin.product.index')->with('success', 'Data berhasil dihapus');
     }
 }

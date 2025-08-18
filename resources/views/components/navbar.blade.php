@@ -17,7 +17,7 @@
                 </li>
                 <li>
                     <a href="/products" class="{{ request()->is('products') ? 'font-semibold' : '' }} link-navbar">
-                        Product
+                        Products
                     </a>
                 </li>
                 <li>
@@ -49,7 +49,7 @@
             </li>
             <li>
                 <a href="/products" class="{{ request()->is('products') ? 'font-semibold' : '' }} link-navbar">
-                    Product
+                    Products
                 </a>
             </li>
             <li>

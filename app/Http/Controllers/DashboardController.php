@@ -17,4 +17,13 @@ class DashboardController extends Controller
         $messages = Message::latest()->paginate(5);
         return view('Admin.dashboard', compact('messages', 'jumlahCategories', 'jumlahProducts', 'jumlahPesans'));
     }
+
+    public function destroy($id)
+    {
+        $message = Message::findOrFail($id);
+        $message->delete();
+
+        return redirect()->route('admin.dashboard')
+            ->with('success', 'Pesan berhasil dihapus.');
+    }
 }

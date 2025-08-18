@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Message;
+use App\Models\Product;
+use App\Models\Category;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -11,7 +13,8 @@ class UserController extends Controller
 {
     function index()
     {
-        return view('User.home');
+        $products = Product::latest()->take(6)->get();
+        return view('User.home', compact('products'));
     }
 
     function about()
@@ -19,14 +22,33 @@ class UserController extends Controller
         return view('User.about');
     }
 
-    function products()
+    function products(Request $request)
     {
-        return view('User.products');
+        $categories = Category::all();
+
+        // Ambil kategori dari query string
+        $selectedCategory = $request->query('kategori');
+
+        $products = Product::when($selectedCategory, function ($query, $selectedCategory) {
+            return $query->whereHas('category', function ($q) use ($selectedCategory) {
+                $q->where('name', $selectedCategory);
+            });
+        })->latest()->paginate(8);
+
+        return view('User.products',compact('products', 'categories', 'selectedCategory'));
     }
     
-    function productDetail()
+    function productDetail($categorySlug, $productSlug)
     {
-        return view('User.product-detail');
+        $category = Category::where('slug', $categorySlug)->firstOrFail();
+
+        $products = Product::latest()->paginate(4);
+
+        $product = Product::where('slug', $productSlug)
+            ->where('category_id', $category->id)
+            ->firstOrFail();
+
+        return view('User.product-detail', compact('product', 'category', 'products'));
     }
 
     function contact()
