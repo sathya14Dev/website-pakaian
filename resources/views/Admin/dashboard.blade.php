@@ -7,14 +7,6 @@
         <div class="w-24 h-1 bg-emerald-600 mx-auto mt-4 rounded-full"></div>
     </div>
 
-    @if (Session('success'))
-        <div class="w-full mt-4 mb-4 border border-green-200 rounded-md">
-            <p class="p-3 bg-green-100 text-green-800 font-medium"><i
-                    class="fa-solid fa-circle-check mr-3"></i>{{ Session('success') }}
-            </p>
-        </div>
-    @endif
-
     <!-- Stats Cards Grid -->
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <!-- Card Total Pesan -->
@@ -69,6 +61,15 @@
             </div>
         </div>
     </div>
+
+    @if (Session('success'))
+        <div class="w-full mt-4 mb-4 border border-green-200 rounded-md">
+            <p class="p-3 bg-green-100 text-green-800 font-medium"><i
+                    class="fa-solid fa-circle-check mr-3"></i>{{ Session('success') }}
+            </p>
+        </div>
+    @endif
+
 
     <!-- Pesan Masuk -->
     <div class="max-w-6xl mx-auto">
