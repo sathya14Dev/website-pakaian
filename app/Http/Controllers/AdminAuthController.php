@@ -15,7 +15,7 @@ class AdminAuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->validate([
-            'email' => 'required|email',
+            'name' => 'required',
             'password' => 'required',
         ]);
 
@@ -24,7 +24,7 @@ class AdminAuthController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Email atau password salah.',
+            'name' => 'Name atau password salah.',
         ]);
     }
 
