@@ -28,10 +28,8 @@
 
         <section class="px-6 md:px-10 mt-32 scroll-mt-26" id="explore">
             <div class="flex flex-col justify-center items-center">
-                <h4 class="text-xl sm:text-2xl md:text-3xl font-medium">Fashion Simple, Look Maximal!</h4>
-                <p class="w-full md:w-2xl text-center mt-5 font-light">Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Suscipit, at architecto veritatis iste omnis
-                    minus placeat. Culpa harum quae iure.</p>
+                <h4 class="text-2xl sm:text-3xl md:text-4xl font-medium">Fashion Simple, Look Maximal!</h4>
+                <p class="w-full md:w-2xl text-center mt-5 font-light">Koleksi busana adat khas Bali yang memadukan tradisi dan gaya modern.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
                 @foreach ($products as $product)
@@ -73,7 +71,7 @@
 
             <div class="w-full md:w-1/2 flex flex-col justify-center">
                 <h1 class="text-2xl text-center md:text-left md:text-3xl font-semibold">Find Your perfect look at Trisna Collection</h1>
-                <p class="mt-10 text-base md:text-lg">
+                <p class="mt-10 text-base md:text-lg text-gray-600">
                     Temukan koleksi busana adat khas Bali terbaik di Trisna Collection. Mulai dari berbagai motif
                     tradisional
                     yang sarat makna budaya hingga sentuhan modern yang elegan. Tersedia beragam pilihan seperti Udeng,
@@ -81,6 +79,42 @@
                 </p>
             </div>
         </div>
+
+        <section class="mt-32 px-6 md:px-10">
+            <h2 class="text-3xl font-semibold text-center mb-8">Apa Kata Mereka ?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white shadow-md p-6 rounded-xl">
+                    <p class="italic text-gray-700">"Kualitasnya bagus banget, cocok buat acara adat di Bali. Bahan nyaman dan jahitannya rapi!"</p>
+                    <div class="mt-4 font-semibold text-[#4b1e1e]">– Ijnap, Karangasem</div>
+                </div>
+                <div class="bg-white shadow-md p-6 rounded-xl">
+                    <p class="italic text-gray-700">"Saya pakai selendang dari Trisna waktu upacara keluarga, dan semua orang bilang tampilannya anggun banget."</p>
+                    <div class="mt-4 font-semibold text-[#4b1e1e]">– Batang, Karangasem</div>
+                </div>
+                <div class="bg-white shadow-md p-6 rounded-xl">
+                    <p class="italic text-gray-700">"Suka banget sama motif kamen-nya. Elegan tapi tetap tradisional."</p>
+                    <div class="mt-4 font-semibold text-[#4b1e1e]">– Bagas, Karangasem</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-32 px-6 md:px-10">
+            <h2 class="text-3xl font-semibold text-center mb-8">Pertanyaan Umum</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div>
+                    <h3 class="font-semibold">Apakah produk ready stock?</h3>
+                    <p class="text-gray-600 mt-2">Sebagian besar produk kami ready stock, tapi beberapa item seperti ukuran khusus atau motif tertentu perlu pre-order</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Bagaimana Sistem Pemesanannya?</h3>
+                    <p class="text-gray-600 mt-2">Untuk Saat ini kami hanya melayani sistem pemesanan via Whatsapp dan hanya melakukan pembayaran secara COD</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Dimana Lokasi Trisna Collection?</h3>
+                    <p class="text-gray-600 mt-2">Kami beralamat di...</p>
+                </div>
+            </div>
+        </section>
 
     </div>
 
