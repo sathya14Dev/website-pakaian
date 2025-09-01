@@ -33,26 +33,22 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
                 @foreach ($products as $product)
-                    <div class="flex py-4 justify-center shadow-sm">
-                        <a href="/product/{{ $product->category->slug }}/{{ $product->slug }}"><img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-44 h-44 object-cover"></a>
+                    <div class="bg-white rounded-md shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-square overflow-hidden">
+                            <a href="/product/{{ $product->category->slug }}/{{ $product->slug }}">
+                                <img src="{{ asset('storage/' . $product->image) }}" 
+                                     alt="{{ $product->name }}" 
+                                     class="w-full h-full object-cover object-center hover:scale-102 transition-transform duration-300">
+                            </a>
+                        </div>
+                        <div class="p-3">
+                            <h3 class="text-sm font-medium text-gray-900 truncate">{{ $product->name }}</h3>
+                            @if(isset($product->price))
+                                <p class="text-lg font-semibold text-gray-700 mt-1">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
+                            @endif
+                        </div>
                     </div>
                 @endforeach
-                {{-- <!-- Baris 1 -->
-                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image.png') }}" alt="kamen"
-                        class="w-44"></div>
-                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image1.png') }}" alt="kamen"
-                        class="w-44"></div>
-                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image2.png') }}" alt="kamen"
-                        class="w-44"></div>
-
-                <!-- Baris 2 -->
-                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image3.png') }}" alt="kamen"
-                        class="w-44"></div>
-                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image4.png') }}" alt="kamen"
-                        class="w-44"></div>
-                <div class="flex py-4 justify-center shadow-sm"><img src="{{ asset('img/image5.png') }}" alt="kamen"
-                        class="w-44"></div> --}}
-
             </div>
             <!-- Tombol di baris 3, berada di tengah -->
             <div class="flex justify-center mt-5">
@@ -70,7 +66,7 @@
             </div>
 
             <div class="w-full md:w-1/2 flex flex-col justify-center">
-                <h1 class="text-2xl text-center md:text-left md:text-3xl font-semibold">Find Your perfect look at Trisna Collection</h1>
+                <h1 class="text-2xl  text-center md:text-left md:text-3xl font-bold mb-4 bg-gradient-to-r from-[#4b1e1e] to-[#6b2c2c] bg-clip-text text-transparent">Find Your perfect look at Trisna Collection</h1>
                 <p class="mt-10 text-base md:text-lg text-gray-600">
                     Temukan koleksi busana adat khas Bali terbaik di Trisna Collection. Mulai dari berbagai motif
                     tradisional
@@ -80,38 +76,116 @@
             </div>
         </div>
 
-        <section class="mt-32 px-6 md:px-10">
-            <h2 class="text-3xl font-semibold text-center mb-8">Apa Kata Mereka ?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white shadow-md p-6 rounded-xl">
-                    <p class="italic text-gray-700">"Kualitasnya bagus banget, cocok buat acara adat di Bali. Bahan nyaman dan jahitannya rapi!"</p>
-                    <div class="mt-4 font-semibold text-[#4b1e1e]">– Ijnap, Karangasem</div>
+        <section class="mt-32 px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#4b1e1e] to-[#6b2c2c] bg-clip-text text-transparent">Apa Kata Mereka?</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Kepuasan pelanggan adalah prioritas utama kami. Berikut testimoni dari pelanggan setia Trisna</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-gray-800 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 p-8 rounded-2xl border-l-4 border-gray-600 relative overflow-hidden group">
+                    <div class="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-600 rounded-full flex items-center justify-center opacity-20 group-hover:opacity-30 transition-opacity">
+                        <svg class="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center text-white font-bold text-lg">I</div>
+                        <div class="ml-4">
+                            <div class="font-bold text-white text-lg">Ijnap</div>
+                            <div class="text-gray-400 text-sm font-medium">Karangasem</div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-6 italic font-medium">"Kualitasnya bagus banget, cocok buat acara adat di Bali. Bahan nyaman dan jahitannya rapi!"</p>
+                    
+                    <div class="flex text-yellow-400 text-xl">★★★★★</div>
                 </div>
-                <div class="bg-white shadow-md p-6 rounded-xl">
-                    <p class="italic text-gray-700">"Saya pakai selendang dari Trisna waktu upacara keluarga, dan semua orang bilang tampilannya anggun banget."</p>
-                    <div class="mt-4 font-semibold text-[#4b1e1e]">– Batang, Karangasem</div>
+                
+                <div class="bg-gray-800 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 p-8 rounded-2xl border-l-4 border-gray-600 relative overflow-hidden group">
+                    <div class="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-600 rounded-full flex items-center justify-center opacity-20 group-hover:opacity-30 transition-opacity">
+                        <svg class="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center text-white font-bold text-lg">B</div>
+                        <div class="ml-4">
+                            <div class="font-bold text-white text-lg">Batang</div>
+                            <div class="text-gray-400 text-sm font-medium">Karangasem</div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-6 italic font-medium">"Saya pakai selendang dari Trisna waktu upacara keluarga, dan semua orang bilang tampilannya anggun banget."</p>
+                    
+                    <div class="flex text-yellow-400 text-xl">★★★★★</div>
                 </div>
-                <div class="bg-white shadow-md p-6 rounded-xl">
-                    <p class="italic text-gray-700">"Suka banget sama motif kamen-nya. Elegan tapi tetap tradisional."</p>
-                    <div class="mt-4 font-semibold text-[#4b1e1e]">– Bagas, Karangasem</div>
+                
+                <div class="bg-gray-800 shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 p-8 rounded-2xl border-l-4 border-gray-600 relative overflow-hidden group">
+                    <div class="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-gray-700 to-gray-600 rounded-full flex items-center justify-center opacity-20 group-hover:opacity-30 transition-opacity">
+                        <svg class="w-8 h-8 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                        </svg>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center text-white font-bold text-lg">B</div>
+                        <div class="ml-4">
+                            <div class="font-bold text-white text-lg">Bagas</div>
+                            <div class="text-gray-400 text-sm font-medium">Karangasem</div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-6 italic font-medium">"Suka banget sama motif kamen-nya. Elegan tapi tetap tradisional."</p>
+                    
+                    <div class="flex text-yellow-400 text-xl">★★★★★</div>
                 </div>
             </div>
         </section>
 
-        <section class="mt-32 px-6 md:px-10">
-            <h2 class="text-3xl font-semibold text-center mb-8">Pertanyaan Umum</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div>
-                    <h3 class="font-semibold">Apakah produk ready stock?</h3>
-                    <p class="text-gray-600 mt-2">Sebagian besar produk kami ready stock, tapi beberapa item seperti ukuran khusus atau motif tertentu perlu pre-order</p>
+        <section class="mt-32 px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#4b1e1e] to-[#6b2c2c] bg-clip-text text-transparent">Pertanyaan Umum</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Temukan jawaban untuk pertanyaan yang sering diajukan tentang produk dan layanan kami</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 rounded-2xl border-t-4 border-gray-600 group">
+                    <div class="flex items-start mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-white text-xl group-hover:text-gray-300 transition-colors">Apakah produk ready stock?</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed ml-14">Sebagian besar produk kami ready stock, tapi beberapa item seperti ukuran khusus atau motif tertentu perlu pre-order</p>
                 </div>
-                <div>
-                    <h3 class="font-semibold">Bagaimana Sistem Pemesanannya?</h3>
-                    <p class="text-gray-600 mt-2">Untuk Saat ini kami hanya melayani sistem pemesanan via Whatsapp dan hanya melakukan pembayaran secara COD</p>
+                
+                <div class="bg-gray-800 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 rounded-2xl border-t-4 border-gray-600 group">
+                    <div class="flex items-start mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-white text-xl group-hover:text-gray-300 transition-colors">Bagaimana Sistem Pemesanannya?</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed ml-14">Untuk Saat ini kami hanya melayani sistem pemesanan via Whatsapp dan hanya melakukan pembayaran secara COD</p>
                 </div>
-                <div>
-                    <h3 class="font-semibold">Dimana Lokasi Trisna Collection?</h3>
-                    <p class="text-gray-600 mt-2">Kami beralamat di...</p>
+                
+                <div class="bg-gray-800 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 rounded-2xl border-t-4 border-gray-600 group">
+                    <div class="flex items-start mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-white text-xl group-hover:text-gray-300 transition-colors">Dimana Lokasi Trisna Collection?</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed ml-14">Kami beralamat di...</p>
                 </div>
             </div>
         </section>
