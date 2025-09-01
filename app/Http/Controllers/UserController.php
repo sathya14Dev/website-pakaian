@@ -69,7 +69,7 @@ class UserController extends Controller
 
         Message::create($data);
 
-        Mail::to('trisnacollection@example.com')->send(mailable: new ContactMail($data));
+        Mail::to('trisnacollection990@gmail.com')->send(mailable: new ContactMail($data));
 
         return back()->with('success', 'Pesan kamu sudah terkirim!');
     }
