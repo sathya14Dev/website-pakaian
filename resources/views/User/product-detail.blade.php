@@ -28,17 +28,24 @@
     <div class="px-6 md:px-10 mt-12">
         <h3 class="text-xl font-semibold text-center mb-8">You might also like</h3>
         <div class="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-8">
-            @foreach ($products as $product)
-                <div class="rounded-lg shadow-xs p-1">
-                    <a href="/product/{{ $product->category->slug }}/{{ $product->slug }}">
-                    <img src={{ asset('storage/'.$product->image) }} alt="{{ $product->name }}" class="w-full h-48 object-cover rounded">
-                    <h3 class="font-semibold text-lg mt-2">{{ $product->name }}</h3>
-                    <div class="flex justify-between mt-1">
-                        <p class="font-light">{{ $category->name }}</p>
-                        <p class="font-medium">Rp. {{ $product->harga }}</p>
-                    </div></a>
-                </div>
-            @endforeach
+           @foreach ($products as $product)
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                        <a href="/product/{{ $product->category->slug }}/{{ $product->slug }}">
+                            <div class="relative aspect-[4/3] ">
+                                <img src="{{ asset('storage/' . $product->image) }}" 
+                                    alt="{{ $product->name }}" 
+                                    class="w-full h-full  hover:scale-105 transition-transform duration-300">
+                                <div class="absolute top-2 left-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded-md shadow">
+                                    {{ $product->category->name }}
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-900 truncate">{{ $product->name }}</h3>
+                            <p class="text-sm text-emerald-700 font-medium mt-1">Rp {{ $product->harga }}</p>
+                        </div>
+                    </div>
+                @endforeach
         </div>
     </div>
 </x-layout>

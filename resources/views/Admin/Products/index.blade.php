@@ -30,8 +30,8 @@
                 <thead>
                     <tr class="bg-emerald-800 text-white">
                         <th class="py-4 px-6 text-left font-semibold uppercase text-sm tracking-wider">ID</th>
-                        <th class="py-4 px-6 text-left font-semibold uppercase text-sm tracking-wider">Jenis Kategori</th>
                         <th class="py-4 px-6 text-left font-semibold uppercase text-sm tracking-wider">Nama</th>
+                        <th class="py-4 px-6 text-left font-semibold uppercase text-sm tracking-wider">Jenis Kategori</th>
                         <th class="py-4 px-6 text-left font-semibold uppercase text-sm tracking-wider">Harga</th>
                         <th class="py-4 px-6 text-left font-semibold uppercase text-sm tracking-wider">Deskripsi</th>
                         <th class="py-4 px-6 text-left font-semibold uppercase text-sm tracking-wider">Image</th>
@@ -43,10 +43,10 @@
                     @foreach ($products as $product)
                         <tr class="hover:bg-emerald-50 transition-colors duration-150">
                             <td class="py-4 px-6 text-gray-700 font-medium">{{ $product->id }}</td>
-                            <td class="py-4 px-6 text-gray-800">{{ $product->category->name }}</td>
                             <td class="py-4 px-6 text-gray-800">{{ $product->name }}</td>
+                            <td class="py-4 px-6 text-gray-800">{{ $product->category->name }}</td>
                             <td class="py-4 px-6 text-gray-800">Rp {{ $product->harga }}</td>
-                            <td class="py-4 px-6 text-gray-600">{{ $product->description }}</td>
+                            <td class="py-4 px-6 text-gray-600">{{ Str::limit($product->description, 30) }}</td>
                             <td class="py-4 px-6">
                                 <img src="{{ asset('storage/' . $product->image) }}" class="w-12 h-12 object-cover rounded-lg border" alt="{{ $product->name }}">
                             </td>

@@ -28,28 +28,30 @@
 
         <section class="px-6 md:px-10 mt-32 scroll-mt-26" id="explore">
             <div class="flex flex-col justify-center items-center">
-                <h4 class="text-2xl sm:text-3xl md:text-4xl font-medium">Fashion Simple, Look Maximal!</h4>
+                <h4 class="text-2xl text-center sm:text-3xl md:text-4xl font-bold">Fashion Simple, Look Maximal!</h4>
                 <p class="w-full md:w-2xl text-center mt-5 font-light">Koleksi busana adat khas Bali yang memadukan tradisi dan gaya modern.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
                 @foreach ($products as $product)
-                    <div class="bg-white rounded-md shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
-                        <div class="aspect-square overflow-hidden">
-                            <a href="/product/{{ $product->category->slug }}/{{ $product->slug }}">
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:-translate-y-1 transition-all duration-300">
+                        <a href="/product/{{ $product->category->slug }}/{{ $product->slug }}">
+                            <div class="relative aspect-[4/3] ">
                                 <img src="{{ asset('storage/' . $product->image) }}" 
-                                     alt="{{ $product->name }}" 
-                                     class="w-full h-full object-cover object-center hover:scale-102 transition-transform duration-300">
-                            </a>
-                        </div>
-                        <div class="p-3">
-                            <h3 class="text-sm font-medium text-gray-900 truncate">{{ $product->name }}</h3>
-                            @if(isset($product->price))
-                                <p class="text-lg font-semibold text-gray-700 mt-1">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
-                            @endif
+                                    alt="{{ $product->name }}" 
+                                    class="w-full h-full  hover:scale-105 transition-transform duration-300">
+                                <div class="absolute top-2 left-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded-md shadow">
+                                    {{ $product->category->name }}
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-4">
+                            <h3 class="text-base font-semibold text-gray-900 truncate">{{ $product->name }}</h3>
+                            <p class="text-sm text-emerald-700 font-medium mt-1">Rp {{ $product->harga }}</p>
                         </div>
                     </div>
                 @endforeach
             </div>
+
             <!-- Tombol di baris 3, berada di tengah -->
             <div class="flex justify-center mt-5">
                 <a href="/products" class="bg-gray-800 group text-white py-2 px-4 rounded hover:bg-gray-950 transition">
@@ -66,7 +68,7 @@
             </div>
 
             <div class="w-full md:w-1/2 flex flex-col justify-center">
-                <h1 class="text-2xl  text-center md:text-left md:text-3xl font-bold mb-4 bg-gradient-to-r from-[#4b1e1e] to-[#6b2c2c] bg-clip-text text-transparent">Find Your perfect look at Trisna Collection</h1>
+                <h1 class="text-2xl text-center md:text-left md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#4b1e1e] to-[#6b2c2c] bg-clip-text text-transparent">Find Your perfect look at Trisna Collection</h1>
                 <p class="mt-10 text-base md:text-lg text-gray-600">
                     Temukan koleksi busana adat khas Bali terbaik di Trisna Collection. Mulai dari berbagai motif
                     tradisional
@@ -193,11 +195,12 @@
     </div>
 
     <div class="flex flex-col justify-center items-center mt-32 px-10">
-        <h2 class="text-4xl italic text-center mb-8">TRISNA COLLECTION</h2>
+        <h2 class="text-4xl italic font-bold text-center mb-8">TRISNA COLLECTION</h2>
         <p class="text-sm md:text-lg sm:text-xl text-center w-full md:w-2xl text-gray-600 mb-8">Pertanyaan, kerjasama, atau
             pemesanan khusus? Tim kami siap membantu. Jangan ragu untuk menghubungi kami!</p>
         <a href="{{ url('contact') }}"
-            class="bg-[#4b1e1e] hover:bg-[#3a1616] text-white font-semibold py-2 px-6 rounded-md">Contact</a>
+            class="bg-gray-800 group text-white py-2 px-4 rounded-md hover:bg-gray-950">Contact
+        </a>
     </div>
 
     </div>
