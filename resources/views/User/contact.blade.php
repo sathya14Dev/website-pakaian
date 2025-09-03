@@ -70,10 +70,10 @@
                 <div class="space-y-2">
                     <h3 class="font-bold text-base flex items-center gap-2">
                         <i class="fab fa-whatsapp text-white text-lg"></i>
-                        (+62) 876964357098
+                        085-333-731-517
                     </h3>
                     <p class="text-sm">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, consequuntur voluptatum?
+                        Ada pertanyaan atau mau order? Chat kami di WhatsApp, yuk! Fast response dan pelayanan ramah
                     </p>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                         </p>
                     </h3>
                     <p class="text-sm text-white">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore, consequuntur voluptatum?
+                        Berbagi hal-hal yang bikin hati hangat dan mata terpikat. Yuk, ikuti perjalanan penuh pesona bersama @warcharming!
                     </p>
                 </div>
             </div>

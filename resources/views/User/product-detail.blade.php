@@ -1,7 +1,7 @@
 <x-layout>
     @php
         $text = "Halo, apakah produk ini [$product->name] masih ada?";
-        $waLink = "https://wa.me/6281234567890?text=" . urlencode($text);
+        $waLink = "https://wa.me/+6285333731517?text=" . urlencode($text);
     @endphp
 
 

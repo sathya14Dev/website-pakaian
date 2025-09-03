@@ -95,7 +95,7 @@
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center text-white font-bold text-lg">I</div>
                         <div class="ml-4">
-                            <div class="font-bold text-white text-lg">Ijnap</div>
+                            <div class="font-bold text-white text-lg">Panji</div>
                             <div class="text-gray-400 text-sm font-medium">Karangasem</div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center text-white font-bold text-lg">B</div>
                         <div class="ml-4">
-                            <div class="font-bold text-white text-lg">Batang</div>
+                            <div class="font-bold text-white text-lg">Bintang</div>
                             <div class="text-gray-400 text-sm font-medium">Karangasem</div>
                         </div>
                     </div>
