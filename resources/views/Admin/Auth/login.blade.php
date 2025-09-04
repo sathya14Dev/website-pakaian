@@ -13,7 +13,7 @@
     <div class="hidden lg:flex lg:w-1/2 flex-col justify-center px-16 text-white">
       <div>
         <div class="flex items-center gap-3 mb-12">
-          <img src="{{ asset('logo.png') }}" alt="logo trisna collection" class=" w-48">
+          <img src="{{ asset('logo.png') }}" alt="logo trisna collection" class=" w-52">
         </div>
         
         <h2 class="text-5xl font-bold mb-6 leading-tight">

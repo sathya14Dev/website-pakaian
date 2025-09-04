@@ -1,13 +1,13 @@
 <x-layout>
   <!-- Judul Utama -->
   <div class="text-center py-18 bg-gradient-to-b from-slate-50 to-white">
-    <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-4 tracking-wide">ABOUT US</h1>
-    <div class="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+    <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-4 tracking-wide" data-aos="zoom-in">ABOUT US</h1>
+    <div class="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto" data-aos="zoom-in"></div>
   </div>
 
   <div>
     <!-- Kontainer Pertama (Gambar di Kiri, Teks di Kanan) -->
-    <div class="max-w-7xl mx-auto py-20">
+    <div class="max-w-7xl mx-auto py-20"  data-aos="fade-up"  >
       <div class="grid lg:grid-cols-2 gap-16 items-center px-6 lg:px-12">
         <div class="flex justify-center">
           <div class="relative group">
@@ -48,8 +48,8 @@
     </div>
 
     <!-- Kontainer Kedua (Teks di Kiri, Gambar di Kanan) -->
-    <div class="bg-gradient-to-br from-slate-50 to-blue-50/30">
-      <div class="max-w-7xl mx-auto pt-20">
+    <div class="bg-gradient-to-br from-slate-50 to-blue-50/30"  data-aos="fade-up">
+      <div class="max-w-7xl mx-auto py-20">
         <div class="grid lg:grid-cols-2 gap-16 items-center px-6 lg:px-12">
           <div class="space-y-8">
             <div>
@@ -99,7 +99,7 @@
     </div>
 
     <!-- Kontainer Ketiga (Gambar di Kiri, Teks di Kanan) -->
-    <div class="bg-white">
+    <div class="bg-white"  data-aos="fade-up">
       <div class="max-w-7xl mx-auto py-20">
         <div class="grid lg:grid-cols-2 gap-16 items-center px-6 lg:px-12">
           <div class="flex justify-center">
@@ -143,7 +143,7 @@
             </div>
             
             <div class="pt-6 group">
-              <a href="{{ url('products') }}" class="inline-flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-700 text-white w-full px-8 py-4 md:w-auto md:px-8 md:py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+              <a href="{{ url('products') }}" class="inline-flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white w-full px-8 py-4 md:w-auto md:px-8 md:py-4 rounded-2xl transition-all duration-300 transform hover:shadow-xl">
                 <span class="font-semibold text-lg mr-3">KUNJUNGI TOKO</span>
                 <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="white" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>

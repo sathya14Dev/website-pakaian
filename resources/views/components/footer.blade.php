@@ -1,3 +1,8 @@
+@php
+    $text = "Halo, saya ingin bertanya tentang produk Anda.";
+    $waLink = "https://wa.me/+6285333731517?text=" . urlencode($text);
+@endphp
+
 <footer class="bg-gray-900 text-white py-8 mt-8">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
         <div>

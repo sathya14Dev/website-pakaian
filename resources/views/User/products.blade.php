@@ -1,12 +1,12 @@
 <x-layout>
     <!-- isi disini -->
     <div>
-        <div class="text-center py-20 mb-18">
-            <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-4 tracking-wide">PRODUCTS</h1>
-            <div class="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+        <div class="text-center py-18 bg-gradient-to-b from-slate-50 to-white">
+            <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-4 tracking-wide" data-aos="zoom-in">PRODUCTS</h1>
+            <div class="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto" data-aos="zoom-in"></div>
         </div>
 
-        <div class="px-6 md:px-10">
+        <div class="px-6 md:px-10 py-20">
             <h2 class="text-xl font-semibold text-gray-800 mb-4">Kategori Produk</h2>
 
             <div class="flex gap-3 overflow-x-auto scrollbar-hide py-2 px-1">
@@ -35,7 +35,7 @@
                                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
                                     class="w-full h-full  hover:scale-105 transition-transform duration-300">
                                 <div
-                                    class="absolute top-2 left-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded-md shadow">
+                                    class="absolute top-2 right-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded-md shadow">
                                     {{ $product->category->name }}
                                 </div>
                             </div>

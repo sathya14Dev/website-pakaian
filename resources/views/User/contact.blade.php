@@ -1,11 +1,12 @@
 <x-layout>
-    <div class="max-w-5xl mx-auto py-2 px-4">
-      <div class="text-center py-16">
-        <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-7 tracking-wide">CONTACT</h1>
-        <div class="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
-      </div>
-        <h2 class="text-4xl italic text-center mb-8">TRISNA COLLECTION</h2>
-        <p class="text-sm md:text-xl sm:text-2xl text-center text-gray-600 mb-8">Pertanyaan, kerjasama, atau pemesanan khusus? Tim kami siap membantu. Jangan ragu untuk menghubungi kami!</p>
+    <div class="text-center py-18 bg-gradient-to-b from-slate-50 to-white">
+        <h1 class="text-5xl md:text-6xl font-light text-gray-800 mb-4 tracking-wide" data-aos="zoom-in">CONTACT</h1>
+        <div class="w-20 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto" data-aos="zoom-in"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto py-20 px-4" data-aos="fade-up">
+        <h2 class="text-4xl font-medium text-center mb-8">TRISNA COLLECTION</h2>
+        <p class="text-xs md:text-xl sm:text-2xl text-center text-gray-600 mb-8">Pertanyaan, kerjasama, atau pemesanan khusus? Tim kami siap membantu. Jangan ragu untuk menghubungi kami!</p>
 
         @if (Session('success'))
             <div class="w-full mt-4 mb-2 border border-green-200 rounded-md">
@@ -23,12 +24,14 @@
                     name="name"
                     placeholder="Enter your name"
                     class="w-full border border-amber-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                    required
                 />
                 <input
                     type="email"
                     name="email"
                     placeholder="Enter your email"
                     class="w-full border border-amber-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                    required
                 />
             </div>
 
@@ -37,6 +40,7 @@
                 placeholder="Enter your message"
                 rows="5"
                 class="w-full border border-amber-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                required
             ></textarea>
 
             <div class="text-center">
@@ -50,7 +54,7 @@
         </form>
         <div class="max-w-6xl mx-auto px-4 py-12 space-y-8">
         <!-- Informasi Kontak -->
-        <div class="grid md:grid-cols-3 gap-6">
+        <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up">
             <!-- Alamat -->
             <div class="bg-white rounded-lg shadow-md p-6">
                 <div class="space-y-2">

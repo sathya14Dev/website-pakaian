@@ -13,10 +13,9 @@
 
             <!-- Konten -->
             <div class="relative z-10 px-6 md:px-10">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 ">Fashion Simpel, Look Maksimal!</h1>
-                <p class="mb-8 font-light max-w-xl mx-auto">
-                    Koleksi baju kekinian untuk kamu yang aktif, berani, dan stylish. Update gaya tanpa mengorbankan
-                    kenyamanan.
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 ">Keanggunan Tradisi, Sentuhan Modern</h1>
+                <p class="mb-8 font-light max-w-2xl mx-auto">
+                    Koleksi busana adat Bali yang memadukan budaya, kenyamanan, dan keindahan tanpa batas waktu.
                 </p>
                 <a href="#explore" class="text-white group border border-white font-semibold px-10 py-3 rounded-xl">
                     Explore Now <i
@@ -26,9 +25,9 @@
 
         </section>
 
-        <section class="px-6 md:px-10 mt-32 scroll-mt-26" id="explore">
+        <section class="px-6 md:px-10 mt-32 scroll-mt-26" id="explore" data-aos="fade-up">
             <div class="flex flex-col justify-center items-center">
-                <h4 class="text-2xl text-center sm:text-3xl md:text-4xl font-bold">Fashion Simple, Look Maximal!</h4>
+                <h4 class="text-3xl text-center sm:text-3xl md:text-4xl font-bold">Fashion Simple, Look Maximal!</h4>
                 <p class="w-full md:w-2xl text-center mt-5 font-light">Koleksi busana adat khas Bali yang memadukan tradisi dan gaya modern.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -39,7 +38,7 @@
                                 <img src="{{ asset('storage/' . $product->image) }}" 
                                     alt="{{ $product->name }}" 
                                     class="w-full h-full  hover:scale-105 transition-transform duration-300">
-                                <div class="absolute top-2 left-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded-md shadow">
+                                <div class="absolute top-2 right-2 bg-emerald-600 text-white text-xs px-2 py-1 rounded-md shadow">
                                     {{ $product->category->name }}
                                 </div>
                             </div>
@@ -61,14 +60,14 @@
             </div>
         </section>
 
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-32 px-6 md:px-10">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-32 px-6 md:px-10"  data-aos="fade-up">
             <div class="w-full md:w-1/2 flex justify-center">
                 <img src="{{ asset('img/homebot.jpg') }}" alt="asset1"
-                    class="rounded-2xl max-h-96 w-full max-w-xl object-cover">
+                    class="rounded-2xl max-h-96 w-full max-w-xl object-cover shadow-md">
             </div>
 
             <div class="w-full md:w-1/2 flex flex-col justify-center">
-                <h1 class="text-2xl text-center md:text-left md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#4b1e1e] to-[#6b2c2c] bg-clip-text text-transparent">Find Your perfect look at Trisna Collection</h1>
+                <h1 class="text-3xl text-center md:text-left md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#4b1e1e] to-[#6b2c2c] bg-clip-text text-transparent">Find Your perfect look at Trisna Collection</h1>
                 <p class="mt-10 text-base md:text-lg text-gray-600">
                     Temukan koleksi busana adat khas Bali terbaik di Trisna Collection. Mulai dari berbagai motif
                     tradisional
@@ -78,10 +77,10 @@
             </div>
         </div>
 
-        <section class="mt-32 px-6 md:px-12">
+        <section class="mt-32 px-6 md:px-12" data-aos="fade-up">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#4b1e1e] to-[#6b2c2c] bg-clip-text text-transparent">Apa Kata Mereka?</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Kepuasan pelanggan adalah prioritas utama kami. Berikut testimoni dari pelanggan setia Trisna</p>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Kepuasan pelanggan adalah prioritas utama kami. Berikut testimoni dari pelanggan setia Trisna Collection</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -147,7 +146,7 @@
             </div>
         </section>
 
-        <section class="mt-32 px-6 md:px-12">
+        <section class="mt-32 px-6 md:px-12" data-aos="fade-up">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#4b1e1e] to-[#6b2c2c] bg-clip-text text-transparent">Pertanyaan Umum</h2>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">Temukan jawaban untuk pertanyaan yang sering diajukan tentang produk dan layanan kami</p>
@@ -175,7 +174,7 @@
                         </div>
                         <h3 class="font-bold text-white text-xl group-hover:text-gray-300 transition-colors">Bagaimana Sistem Pemesanannya?</h3>
                     </div>
-                    <p class="text-gray-400 leading-relaxed ml-14">Untuk Saat ini kami hanya melayani sistem pemesanan via Whatsapp dan hanya melakukan pembayaran secara COD</p>
+                    <p class="text-gray-400 leading-relaxed ml-14">Untuk Saat ini kami hanya melayani sistem pemesanan via Whatsapp</p>
                 </div>
                 
                 <div class="bg-gray-800 shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 p-8 rounded-2xl border-t-4 border-gray-600 group">
@@ -187,14 +186,14 @@
                         </div>
                         <h3 class="font-bold text-white text-xl group-hover:text-gray-300 transition-colors">Dimana Lokasi Trisna Collection?</h3>
                     </div>
-                    <p class="text-gray-400 leading-relaxed ml-14">Kami beralamat di...</p>
+                    <p class="text-gray-400 leading-relaxed ml-14">Kami beralamat di Jl. Raya Besakih, Selatan pasar, Menanga, Kec. Rendang, Kabupaten Karangasem, Bali 80863</p>
                 </div>
             </div>
         </section>
 
     </div>
 
-    <div class="flex flex-col justify-center items-center mt-32 px-10">
+    <div class="flex flex-col justify-center items-center mt-32 px-10" data-aos="fade-up">
         <h2 class="text-4xl italic font-bold text-center mb-8">TRISNA COLLECTION</h2>
         <p class="text-sm md:text-lg sm:text-xl text-center w-full md:w-2xl text-gray-600 mb-8">Pertanyaan, kerjasama, atau
             pemesanan khusus? Tim kami siap membantu. Jangan ragu untuk menghubungi kami!</p>
