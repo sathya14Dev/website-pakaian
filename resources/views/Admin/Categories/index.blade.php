@@ -37,7 +37,7 @@
                 <tbody class="divide-y divide-gray-100">
                     @foreach ($categories as $category)
                         <tr class="hover:bg-emerald-50 transition-colors duration-150">
-                            <td class="py-4 px-6 text-gray-700 font-medium">{{ $category->id }}</td>
+                            <td class="py-4 px-6 text-gray-700 font-medium">#</td>
                             <td class="py-4 px-6">
                                 <div class="flex items-center">
                                     <div>
@@ -85,7 +85,7 @@
         </div>
 
         <!-- Footer Info -->
-        <div class="mt-6 flex justify-between items-center text-sm text-gray-600">
+        <div class="mt-6 text-sm text-gray-600">
             {{ $categories->links() }}
         </div>
     </div>
